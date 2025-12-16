@@ -1,29 +1,24 @@
-Dynamic Real Estate Pricing Engine 🏠
-📌 Project Overview
-An end-to-end Machine Learning Solution designed to predict optimal rental pricing for real estate properties. Unlike standard notebook experiments, this project implements a production-ready Microservice Architecture.
+# Dynamic Real Estate Pricing Engine 🏠
 
-It features a "Model Zoo" strategy that dynamically benchmarks multiple algorithms (XGBoost, Random Forest, SVR, Regularized Linear Models) to automatically select and deploy the highest-performing champion model.
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue) ![XGBoost](https://img.shields.io/badge/XGBoost-2.0-green) ![FastAPI](https://img.shields.io/badge/FastAPI-Production-teal) ![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
 
-🚀 Key Features
-🏆 Champion/Challenger Training Loop: Automated orchestration script (train.py) that trains 5+ different model architectures, performs Hyperparameter Tuning via GridSearchCV, and promotes the model with the lowest Mean Absolute Error (MAE) to production.
+## 📌 Project Overview
+An end-to-end **Machine Learning Solution** designed to predict optimal rental pricing for real estate properties. Unlike standard notebook experiments, this project implements a production-ready **Microservice Architecture**.
 
-🏭 Factory Pattern Pipelines: Decoupled model definitions from training logic using a PipelineFactory. This allows seamless swapping of estimators (e.g., swapping Ridge for XGBoost) without changing preprocessing code.
+It features a **"Model Zoo"** strategy that dynamically benchmarks multiple algorithms (XGBoost, Random Forest, SVR, Regularized Linear Models) to automatically select and deploy the highest-performing champion model.
 
-🛠 Custom Feature Engineering:
+## 🚀 Key Features
+* **🏆 Champion/Challenger Training Loop:** Automated orchestration script (`train.py`) that trains 5+ different model architectures, performs Hyperparameter Tuning via `GridSearchCV`, and promotes the model with the lowest Mean Absolute Error (MAE) to production.
+* **🏭 Factory Pattern Pipelines:** Decoupled model definitions from training logic using a `PipelineFactory`. This allows seamless swapping of estimators (e.g., swapping Ridge for XGBoost) without changing preprocessing code.
+* **🛠 Custom Feature Engineering:**
+    * `AmenityScoreEngine`: A custom Scikit-Learn transformer that parses unstructured text data (e.g., `"{TV,Wifi,Pool}"`) into numerical density scores.
+    * **Log-Transformations:** Automatic skew correction for financial data (Price/Income).
+* **⚡ High-Performance API:** A **FastAPI** microservice serving predictions with **Pydantic** strict type validation and automatic Swagger UI documentation.
+* **🐳 Containerization:** Fully Dockerized application optimized for cloud deployment with multi-stage builds.
+* **🍎 M4 Chip Optimization:** Parallel processing tuned (`n_jobs=-2`) to leverage Apple Silicon's Unified Memory Architecture without UI freezing.
 
-AmenityScoreEngine: A custom Scikit-Learn transformer that parses unstructured text data (e.g., "{TV,Wifi,Pool}") into numerical density scores.
-
-Log-Transformations: Automatic skew correction for financial data (Price/Income).
-
-⚡ High-Performance API: A FastAPI microservice serving predictions with Pydantic strict type validation and automatic Swagger UI documentation.
-
-🐳 Containerization: Fully Dockerized application optimized for cloud deployment with multi-stage builds.
-
-🍎 M4 Chip Optimization: Parallel processing tuned (n_jobs=-2) to leverage Apple Silicon's Unified Memory Architecture without UI freezing.
-
-📂 Enterprise Project Structure
-Plaintext
-
+## 📂 Enterprise Project Structure
+```text
 dynamic_pricing_project/
 ├── data/
 │   ├── raw/                  # Original CSV files (e.g., Inside Airbnb)
@@ -40,6 +35,7 @@ dynamic_pricing_project/
 ├── Dockerfile                # Production Container Definition
 ├── requirements.txt          # Dependency pinning
 └── README.md                 # Documentation
+
 🛠 Tech Stack
 Core: Python 3.9+
 
