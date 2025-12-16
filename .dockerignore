@@ -1,0 +1,14 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.git/
+.gitignore
+.DS_Store
+notebooks/
+# We exclude data/raw because production containers usually 
+# fetch data from a database or S3 bucket, not a local CSV.
+data/raw/

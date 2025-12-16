@@ -1,0 +1,45 @@
+# ========================
+# Python Virtual Environments
+# ========================
+venv/
+.venv/
+env/
+ENV/
+.ENV/
+
+# ========================
+# Python cache / compiled files
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ========================
+# Jupyter / IPython
+# ========================
+.ipynb_checkpoints/
+
+# ========================
+# Environment variables
+# ========================
+.env
+.env.*
+
+# ========================
+# Build / distribution
+# ========================
+build/
+dist/
+*.egg-info/
+
+# ========================
+# Logs
+# ========================
+*.log
+
+# ========================
+# OS / Editor junk
+# ========================
+.DS_Store
+.vscode/
+.idea/
