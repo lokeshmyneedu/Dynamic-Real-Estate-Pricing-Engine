@@ -35,6 +35,7 @@ dynamic_pricing_project/
 ├── Dockerfile                # Production Container Definition
 ├── requirements.txt          # Dependency pinning
 └── README.md                 # Documentation
+```
 
 🛠 Tech Stack
 Core: Python 3.9+
